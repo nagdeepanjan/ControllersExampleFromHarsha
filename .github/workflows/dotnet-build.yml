@@ -21,5 +21,9 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore ControllersExample/ControllersExample.csproj
 
-    - name: Build
-      run: dotnet build ControllersExample/ControllersExample.csproj --configuration Release --no-restore
+    - name: Build for linux-x64
+      run: dotnet build ControllersExample/ControllersExample.csproj --configuration Release --runtime linux-x64 --no-restore
+
+    - name: Build for linux-arm64
+      run: dotnet build ControllersExample/ControllersExample.csproj --configuration Release --runtime linux-arm64 --no-restore
+
