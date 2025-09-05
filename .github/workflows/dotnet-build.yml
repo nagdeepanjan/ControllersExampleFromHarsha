@@ -1,0 +1,25 @@
+name: .NET Build
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore ControllersExample/ControllersExample/ControllersExample.csproj
+
+    - name: Build
+      run: dotnet build ControllersExample/ControllersExample/ControllersExample.csproj --configuration Release --no-restore
