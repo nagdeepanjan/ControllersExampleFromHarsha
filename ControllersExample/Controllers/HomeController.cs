@@ -15,7 +15,7 @@ namespace ControllersExample.Controllers
         [Route("/")]
         public string Index()
         {
-            return "Hello from method1";
+            return "Hello from Index";
         }
 
 
