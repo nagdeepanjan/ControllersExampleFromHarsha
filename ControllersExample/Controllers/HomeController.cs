@@ -19,10 +19,10 @@ namespace ControllersExample.Controllers
         }
 
 
-        [Route("contact")]
-        public string Contact()
+        [Route("contact/{mobile:length(10)}")]
+        public string Contact(string mobile)
         {
-            return "Hello from contact";
+            return $"Hello from contact:{mobile}";
         }
 
         [Route("about")]
