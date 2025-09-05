@@ -19,7 +19,7 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore ControllersExample/ControllersExample/ControllersExample.csproj
+      run: dotnet restore ControllersExample/ControllersExample.csproj
 
     - name: Build
-      run: dotnet build ControllersExample/ControllersExample/ControllersExample.csproj --configuration Release --no-restore
+      run: dotnet build ControllersExample/ControllersExample.csproj --configuration Release --no-restore
