@@ -2,20 +2,13 @@
 
 namespace ControllersExample.Controllers
 {
-    //public class HomeController : Controller
-    //{
-    //    public IActionResult Index()
-    //    {
-    //        return View();
-    //    }
-    //}
-    public class HomeController
+    public class HomeController : Controller
     {
         [Route("index")]
         [Route("/")]
-        public string Index()
+        public ContentResult Index()
         {
-            return "Hello from Index";
+            return Content("<h1>This is the content</h1>", "text/html");
         }
 
 
