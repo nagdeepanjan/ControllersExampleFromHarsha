@@ -18,10 +18,17 @@ namespace ControllersExample.Controllers
             return $"Hello from contact:{mobile}";
         }
 
-        [Route("about")]
-        public string About()
+        [Route("/person")]
+        public JsonResult Person()
         {
-            return "Hello from about";
+            var person = new
+            {
+                Id = 1,
+                Name = "John Doe",
+                Age = 30,
+                Email = "john.doe@example.com"
+            };
+            return Json(person);
         }
     }
 }
